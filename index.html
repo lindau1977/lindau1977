@@ -1,0 +1,107 @@
+<!-- šis ir komentārs HTML valodā -->
+
+<!-- VSC klaviatūras saīsinājumi -->
+<!-- CTRL+/ vai Ctrl+?  - izvido komentāru 
+Shift+Alt+F - sakārto kodu
+Alt+Z - sadalīs vienu koda rindiņu vairākās rindiņās, ja tā neietilps ekrānā
+Ctrl+[ vai Ctrl+] - pārvieto kodu uz kreiso vai labo pusi (palielina vai samazina koda rindas atkāpi)
+Alt+bultiņas - pārvieto kodu uz augšu vai uz leju
+
+
+Pieejami saīsinājumi:
+settings -> keyboard shortcuts Ctrl+K  Ctrl+S
+-->
+
+<!DOCTYPE html> <!-- Pasaka pārlūkprogrammai, ka šis ir HTML dokuments -->
+<html lang="en">  <!-- HTML valodas atribūts - "sakne". lang="" - pasaka, kādā valodā ir lapa -->
+<head> <!-- Mājaslapas galvene. Pamatā satur informāciju, kuru lietotāji tiešā veidā neredz.-->
+    <meta charset="UTF-8">  <!-- l<meta>  - lapas metadati. charset="UTF-8" - lapas kodējums, šajā gadījumā unikods. -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- pasaka pārlūkam, kādā platumā un pietuvinājumā ierīcēs sākotnēji jāielādē lapas saturs -->
+    <meta name="autors" content="Lapas autors">
+    <meta name="description" content="Lapas apraksts"> <!-- svarīgs SEO meklētājos-->
+    <meta name="keywords" content="Lapas tēma, atslēgasvārdi, atdalīti ar komatiem"> <!-- svarīgs SEO meklētājos-->
+    
+    
+    <title>Document</title> <!-- Redzams pārlūkprogrammas cilnē -->
+
+    <!-- Lapas ikona - bilde .jpg vai citā formātā -->
+    <link rel="icon" href="images/favicon-32x32.png" type="image/x-icon"> <!-- lapas ikona, kas redzama pārlūkprogrammas cilnē -->
+
+    <!-- Lapas dizaina/ stila fails -->
+    <link rel="stylesheet" href="stils.css"> <!-- saite uz CSS failu -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body> <!-- Lapas saturs. Viss, kas redzams lietotājam. -->
+    <div class="container"> <!-- Izmantojam elementu grupēšanai, <div> nav konkrētas nozīmes -->
+        <header> <!-- Lapas galvene - logo, navigācija, meklēšana u.tml. -->
+            <h1 class="bungee-regular">Lapas logo</h1>
+            <h2>Virsraksts</h2>
+            <h6>Apakšvirsraksts</h6>
+            <nav> <!-- Navigācija -->
+                <!-- Horizontāla navigācija - izmantojot aizzīmētu sarakstu -->
+                <ul class="nav-horizontal"> <!-- unordered list jeb nesakārtots (aizzīmēts) -->
+                    <li>
+                        <a href="index.html">Sākums</a>
+                    </li> <!-- Saraksta vienumi -->
+                    <li>
+                        <a href="https://www.rtu.lv" target="_blank">RTU</a>
+                    </li>
+                    <li>
+                        <a href="https://das.lv" target="_blank">DAS</a>
+                    </li>
+                </ul>
+                <hr> <!-- Horizontāla līnija -->
+                <!-- Vertikāla navigācija - izmantojot aizzīmētu sarakstu -->
+                <ol class="nav-vertical"> <!-- unordered list jeb nesakārtots (aizzīmēts) -->
+                    <li>
+                        <a href="index.html">Sākums</a>
+                    </li> <!-- Saraksta vienumi -->
+                    <li>
+                        <a href="https://www.rtu.lv" target="_blank">RTU</a>
+                    </li>
+                    <li>
+                        <a href="https://das.lv" target="_blank">DAS.lv</a>
+                    </li>
+                </ol>
+            </nav>
+        </header>
+        <hr>
+        <h2 class="StyleScript">Tālāk seko lapas galvenais saturs</h2>
+        <div>
+            <p class="apmale">Rindkopa, kurā izvietot saturu.</p>
+            <p class="apmale atstarpe">Šī ir 2. rindkopa.</p>
+            Šis ir teksts, kas nav ievietots nevienā rindkopā. <br> <!-- <br> - pārtrauc rindkopu -->
+        </div>
+        <hr>
+        <h2>Attēli</h2>
+        <div class="apmale fons atstarpe">
+            <img src="images/kakis.jpg" width="200px" height="200px" alt="Kaķis"> <!-- <img> - attēla ievietošana lapā. src - attēla avots -->
+            <!-- width - attēla platums
+             height - attēla augstums
+             Norādot vienu vērtību auto - attēls samazināsies/ palielināsies proporcionāli. 
+             Ja nenorāda platumu vai augstumu, arī tad samazināsies/ palielināsies proporcionāli. 
+             alt - alternatīvs teksts, kas parādīsies, ja attēlu nevarēs ielādēt.
+             -->
+            <img src="images/kaķis.jpg" alt="Kaķis" width="100" height="100"> <!-- <img> - attēla ievietošana lapā -->
+        </div>
+        <hr>
+        <h2> Flexbox piemērs</h2>
+        <div class="flex-container">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+            <div class="flex-item">4</div>
+        </div>
+        <hr>
+        <footer id="footer"> <!-- Lapas kājene -->
+            <p>Copyright © RTU.lv & DAS.lv</p>
+            <p>Copyright &copy; RTU.lv & DAS.lv</p>
+            <!-- &copy;  - entītija, kas ievieto autortiesību simbolu. 
+             Entītija - speciāls kods, kas tiek izmantots, lai attēlotu simbolus. -->
+        </div>
+   
+</body>
+</html>

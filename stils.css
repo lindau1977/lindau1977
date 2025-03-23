@@ -1,0 +1,138 @@
+/* Komentārs
+CSS
+failā
+*/
+
+/* Lapas kopējais izskats */
+body { /* Selektors - norāda, kādu elementu apstrādāt. Šajā gadījumā - <body> tagu */
+    font-family: Arial, sans-serif;
+    background-color: #14b3d5; /*fonta krāsa*/
+    margin: auto; /* Apmale ap elementu. automātiski centrē lapu */
+    /* margin: augša pa labi apakša pa kreisi;
+    margin: 10px 20px 30px 40px; */
+    width: 80%;
+    min-width: 200px; /* Elementa (šoreiz lapas) minimālais platums */
+    max-width: 1000px;  /* Elementa (šoreiz lapas) maksimālais platums */
+    
+}
+
+/* KLASES 
+Klases ļauj izmantot vienu stilu vairākiem elementiem, neatkarīgi no elementa veida un tā atrašanās vietas lapā. 
+
+Klases drīkst atkārtoties viena faila ietvaros vairākiem elementiem.
+Klases var kombinēt - vienam elementam var būt vairākas klases.
+Klašu nosaukumos drīkst izmantot tikai burtus, ciparus, domuzīmes un defises, un nosaukumi drīkst sastāvēt arī tikai no skaitļiem. 
+*/
+
+.container {
+    background-color: rgba(255, 255, 255, 0.5); /* fona krāsa ar caurspīdīgumu */
+    padding: 20px; /* iekšējā atstarpe */
+    border-radius: 10px; /* elementa malu noapaļošana */
+    margin-top: 20px; /* atstarpe no augšas */
+    margin-bottom: 10px; /* atstarpe no apakšas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* ēnas efekts */
+    /* box-shadow: horizontālā nobīde pa x asi, vertikālā nobīde pa y asi, izplūdes attālums, ēnas krāsa */
+}
+
+/* Horizontāla un vertikāla navigācija no sarakstiem */
+
+.nav-horizontal, .nav-vertical { /*apstrādā divus elementus vienlaicīgi*/
+    list-style-type: none; /* noņem saraksta punktus */
+    padding: 0; /* iekšējā atstarpe */
+    margin: 0; /* atstarpe no augšas un apakšas */
+    overflow: hidden; /* parāda tikai to, kas ietilpst elementā 
+    Ja fons/saturs neietilps dotajā vietā, tad lieko daļu paslēpj. Reizēm tas novērš problēmas arī ar elementu pārklāšanos. */
+}
+
+.nav-horizontal li { /* apstrādā saraksta elementus */
+    float: left; /* elementi novietoti viens blakus otram */
+    margin-right: 10px; /* atstarpe no labās puses */
+}
+
+.nav-horizontal a, .nav-vertical a { /* apstrādā saites */
+    display: block; /* saites tiek attēlotas kā bloki */
+    text-decoration: none; /* noņem saites apzīmējumu */
+    color: #265335; /* fonta krāsa */
+    padding: 8px 16px; /* iApmales ap saturu - šoreiz izveidos "pogas" */
+    background-color: #70ca8e;
+}
+
+.nav-horizontal a:hover, .nav-vertical a:hover { /* saites stāvoklis, kad uz tām ir novirzīts peles kursors */
+    background-color: #265335; /* fona krāsa */
+    color: #fff; /* fonta krāsa */
+}
+
+/* Vairāku klašu izmantošana vienam elementam.
+Ja vairākām klasēm ir vienādas īpašības, tad pēdējā HTML izsauktā klase ņems virsroku.*/
+.apmale {
+    border: 5px dashed #ea021b ; /* apmales biezums, tips un krāsa */
+}
+
+.fons {
+background: #87cdb5;
+}
+.atstarpe {
+padding: 40px;
+}
+
+/* ID - unikāls elementa identifikators (apzīmējums), kas konkrētajā HTML/PHP dokumentā parādās tikai vienreiz.
+
+ID nedrīkst atkārtoties viena faila ietvaros.
+ID nedrīkst sākties ar ciparu.
+ID nedrīkst saturēt atstarpes un speciāos simbolus, izņemot apakšsvītru un defisi. */
+
+#footer { /* #nosaukums - # apzīmē, ka ir ID */
+    background: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg");
+    padding: 50px 20px;
+    background-size: cover; /* fona attēla izmēra pielāgošana */
+    /* background-size: cover; izmaina fona attēla izmēru - šoreiz pārklāj visu fonu (samazina vai palielina visu attēlu) */
+    /* background-repeat: no-repeat; /* attēls netiks atkārtots */
+    background-repeat: no-repeat; /* Fona attēla atkārtojums */
+    background-position: center; /* Fona attēla pozīcija */
+
+}
+
+/* Responsivitāte - lapas pielāgošana dažādām ierīcēm un to ekrāna izmēriem. 
+Pamatā visur responsivitātei ir flex-box */
+
+.flex-container {
+padding: 20px;
+background-color: #4e8561;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+display: flex;
+flex-flow: row wrap;
+justify-content: space-around;
+}
+
+.flex-item {
+background-color: #80d398;
+padding: 10px;
+margin: 10px;
+border-radius: 8px;
+text-align: center;
+width: 100px;
+}
+
+/* Teksta fona maiņa
+1.variants - izmantojot 
+*/
+
+/* 1. variants - izmantojot klases */
+.bungee-regular {
+    font-family: 'Bungee', sans-serif; /* fonta ģimene */
+    font-weight: 400; /* fonta biezums */
+    font-style: normal; /* fonta stils */
+ }
+
+ /* 2. variants */
+ @font-face {
+    font-family: 'StyleScript';
+    src: url('StyleScript-Regular.ttf');
+    
+ }
+
+ .StyleScript {
+    font-family: 'StyleScript', sans-serif;
+    font-weight: 400;
+ }

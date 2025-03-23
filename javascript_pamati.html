@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript pamati</title>
+</head>
+<body>
+    <h2>Mainīgie (variables)</h2>
+    <p>
+        Mainīgie ļauj saglabāt datus, kuriem var piekļūt un izmantot, kad tie būs vajadzīgi.
+    </p>
+    <p id="mainigais">
+        Šeit parādīsies teksts no JavaScript koda. Šis saturs tiks pārrakstīts.
+    </p>
+    <hr>
+    <h2>Ievades lauka piemērs</h2>
+    <input type="text" id="ievadesLauks" placeholder="Ievadi kaut ko...">
+    <button onclick="paraditIevadi()">Parādīt ievadīto tekstu</button> <!-- onclick ļauj izsaukt norādīto JavaScript funkciju -->
+    <p id="paraditIevadito">
+        Šeit parādīsies teksts no ievades lauka.
+    </p>
+    <hr>
+    <h2>Satura ģenerēšana ar JS</h2>
+    <button onclick="generetSaturu(1)">Ģenerēt 5 rindkopas no jauna</button>
+    <button onclick="generetSaturu(2)">Ģenerēt papildus saturu esošajam</button>
+    <div id="generetsSaturs"></div>
+    <hr>
+    <h2>Poga lapas fona krāsas maiņai</h2>
+    <button onclick="mainitFonu()">Mainīt lapas fona krāsu</button>
+
+    <!-- JavaScript kods -->
+    <script>
+        /* Vairāku rindiņu
+        komentārs */
+        // Vienas rindiņas komentārs
+        
+        //Mainīgā piemērs
+        // var      let     - atslēgvārdi, kas ļauj definēt mainīgos
+        console.log(x);
+        var x = 5;
+        console.log(x);
+        // console.log(y);
+        let y = 10;
+        console.log(y);
+
+        let mainigais = "Sveika, pasaule!";
+        // document.getElementById("mainigais").innerHTML = "<b>" + mainigais + "</b>"; // + savirknē tekstu ar mainīgajiem vienā virknē
+        document.getElementById("mainigais").innerText = "<b>" + mainigais + "</b>"; // innerText neinterpretē HTML tagus un parāda tos kā parastu tekstu. innerHTML interpretē HTML tagus un tos attēlo kā HTML.
+
+        //Funkcija, kas nolasīs ievadīto tekstu no lauka un parādīs to lapā
+        function paraditIevadi() {
+            let ievade = document.getElementById("ievadesLauks").value; //.value - nolasa ievades lauka vērtību
+            document.getElementById("paraditIevadito").innerText = ievade;
+        }
+
+        //Funkcija satura ģenerēšanai
+        function generetSaturu(tips) {
+            let elements = document.getElementById("generetsSaturs"); //Elements, kurā ielikt jauno saturu
+
+            if (tips == 1) {
+                elements.innerHTML = ""; //Nodzēsīs esošo saturu
+                // elements.innerHTML = "<p>Rindkopa 1</p><p>Rindkopa 2</p><p>Rindkopa 3</p><p>Rindkopa 4</p><p>Rindkopa 5</p>";
+                for (let i = 1; i <= 5; i++) {
+                    elements.innerHTML += "<p>Rindkopa " + i + "</p>";
+                }
+                //for - cikls, kas izpilda darbības noteiktu skaitu reižu
+                // for (sākuma vērtība; izpildes nosacījums; solis)
+                // i++ - palielina mainīgā i vērtību par 1. Tas pats, kas i=i+1 vai i+=1
+                // i-- - samazina mainīgā i vērtību par 1. Tas pats, kas i=i-1 vai i-=1
+
+            } else if (tips == 2) {
+                elements.innerHTML += "<p>Šis ir jauns saturs iekš esošā elementa.</div>"; // += - šajā gadījumā pievieno jaunu tekstu klāt esošajam. Izmantojot ar skaitļiem, palielinās skaitļa vērtību par norādīto.
+            }
+
+            /* IF nosacījumi ļauj mainīt koda darbību atkarībā no pārbaudes rezultāta.
+            if (pārbaude) {
+                darbības, ja pārbaude izpildās (atgriež True)
+            } else if (cita pārbaude) {
+                darbības, ja izpildās šī nevis pirmā pārbaude
+            } else {
+                darbības, ja neizpildās neviena no iepriekšējām pārbaudēm
+            }
+            */
+        }
+
+        //Funkcija lapas fona krāsas maiņai
+        function mainitFonu() {
+            let krasa = Math.floor(Math.random()*16777215).toString(16); //Math.random() - gadījuma skaitlis no 0 līdz 1; Math.floor() - noapaļo uz leju; .toString(16) - pārveido skaitli uz heksadecimālo skaitīšanas sistēmu
+            document.body.style.backgroundColor = "#" + krasa; //document.body - atsaucas uz <body> tagu; .style.backgroundColor - maina lapas fona krāsu
+        }
+    </script>
+</body>
+</html>
